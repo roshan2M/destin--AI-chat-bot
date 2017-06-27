@@ -1,0 +1,450 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "DestinAIBot",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "crime"
+    },
+    {
+      "name": "income"
+    },
+    {
+      "name": "job"
+    },
+    {
+      "name": "move"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "pollution"
+    },
+    {
+      "name": "population"
+    },
+    {
+      "name": "view"
+    },
+    {
+      "name": "Weather.GetForecast",
+      "inherits": {
+        "domain_name": "Weather",
+        "model_name": "GetForecast"
+      }
+    }
+  ],
+  "entities": [
+    {
+      "name": "Crime"
+    },
+    {
+      "name": "Income"
+    },
+    {
+      "name": "Job"
+    },
+    {
+      "name": "Pollution"
+    },
+    {
+      "name": "Population"
+    },
+    {
+      "name": "precipitation"
+    },
+    {
+      "name": "Size"
+    },
+    {
+      "name": "visa"
+    }
+  ],
+  "composites": [
+    {
+      "name": "weather",
+      "children": [
+        "temperature",
+        "precipitation"
+      ]
+    },
+    {
+      "name": "WorkInfo",
+      "children": [
+        "Job",
+        "visa",
+        "money"
+      ]
+    }
+  ],
+  "closedLists": [
+    {
+      "name": "ITJobs",
+      "subLists": [
+        {
+          "canonicalForm": "software developer",
+          "list": [
+            "developer",
+            "software engineer",
+            "programmer",
+            "computer programmer"
+          ]
+        },
+        {
+          "canonicalForm": "web developer",
+          "list": []
+        },
+        {
+          "canonicalForm": "web designer",
+          "list": [
+            "designer"
+          ]
+        },
+        {
+          "canonicalForm": "project manager",
+          "list": []
+        },
+        {
+          "canonicalForm": "database administrator",
+          "list": []
+        },
+        {
+          "canonicalForm": "systems analyst",
+          "list": [
+            "systems administrator"
+          ]
+        },
+        {
+          "canonicalForm": "network engineer",
+          "list": [
+            "network analyst"
+          ]
+        },
+        {
+          "canonicalForm": "business analyst",
+          "list": []
+        },
+        {
+          "canonicalForm": "data scientist",
+          "list": []
+        }
+      ]
+    }
+  ],
+  "bing_entities": [
+    "geography",
+    "money",
+    "temperature"
+  ],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "hello",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how are you doing?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will it snow today",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "hi bot",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will it rain this weekend",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "can you show me an image",
+      "intent": "view",
+      "entities": []
+    },
+    {
+      "text": "i want to go to mumbai",
+      "intent": "move",
+      "entities": []
+    },
+    {
+      "text": "is it safe there?",
+      "intent": "crime",
+      "entities": []
+    },
+    {
+      "text": "Get the forcast for me",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "What is the weather in redmond ?",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "soliciting today's weather",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "\"I need to know the temperature at bangor, me\"",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "forecast in celcius",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "Find out tomorrow's weather",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "Provide me by toronto weather please",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "will it be raining in ranchi",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "i want to move to toronto",
+      "intent": "move",
+      "entities": []
+    },
+    {
+      "text": "do i need to be careful",
+      "intent": "crime",
+      "entities": []
+    },
+    {
+      "text": "how safe is it in toronto",
+      "intent": "crime",
+      "entities": []
+    },
+    {
+      "text": "can i have a preview of toronto",
+      "intent": "view",
+      "entities": []
+    },
+    {
+      "text": "can i view an image",
+      "intent": "view",
+      "entities": []
+    },
+    {
+      "text": "can i see what kind of place toronto is",
+      "intent": "view",
+      "entities": []
+    },
+    {
+      "text": "what does toronto look like",
+      "intent": "view",
+      "entities": []
+    },
+    {
+      "text": "i want to see an image",
+      "intent": "view",
+      "entities": []
+    },
+    {
+      "text": "are there any jobs available for jobs",
+      "intent": "job",
+      "entities": [
+        {
+          "entity": "Job",
+          "startPos": 33,
+          "endPos": 36
+        }
+      ]
+    },
+    {
+      "text": "i'm looking for a new job",
+      "intent": "job",
+      "entities": []
+    },
+    {
+      "text": "i am a job. is there any work for me",
+      "intent": "job",
+      "entities": [
+        {
+          "entity": "Job",
+          "startPos": 7,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "can you find me work",
+      "intent": "job",
+      "entities": []
+    },
+    {
+      "text": "is it safe in toronto?",
+      "intent": "crime",
+      "entities": []
+    },
+    {
+      "text": "how clean is it in toronto?",
+      "intent": "pollution",
+      "entities": []
+    },
+    {
+      "text": "is it clean in toronto?",
+      "intent": "pollution",
+      "entities": []
+    },
+    {
+      "text": "is toronto a green city?",
+      "intent": "pollution",
+      "entities": []
+    },
+    {
+      "text": "what is the population of toronto?",
+      "intent": "population",
+      "entities": []
+    },
+    {
+      "text": "how many people live in toronto?",
+      "intent": "population",
+      "entities": []
+    },
+    {
+      "text": "what is the temperature in toronto?",
+      "intent": "Weather.GetForecast",
+      "entities": []
+    },
+    {
+      "text": "i need to find a job in toronto",
+      "intent": "job",
+      "entities": []
+    },
+    {
+      "text": "i am a job",
+      "intent": "job",
+      "entities": [
+        {
+          "entity": "Job",
+          "startPos": 7,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "can you find work in job?",
+      "intent": "job",
+      "entities": [
+        {
+          "entity": "Job",
+          "startPos": 21,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "jobs for job?",
+      "intent": "job",
+      "entities": [
+        {
+          "entity": "Job",
+          "startPos": 9,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "how well does job pay?",
+      "intent": "income",
+      "entities": [
+        {
+          "entity": "Job",
+          "startPos": 14,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "what is the income in toronto?",
+      "intent": "income",
+      "entities": [
+        {
+          "entity": "Income",
+          "startPos": 12,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "how much do job earn?",
+      "intent": "income",
+      "entities": [
+        {
+          "entity": "Job",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "what is the crime rate in toronto?",
+      "intent": "crime",
+      "entities": []
+    },
+    {
+      "text": "what is the crime rate?",
+      "intent": "crime",
+      "entities": []
+    },
+    {
+      "text": "i would like to go to toronto",
+      "intent": "move",
+      "entities": []
+    },
+    {
+      "text": "i would like to live in toronto",
+      "intent": "move",
+      "entities": []
+    },
+    {
+      "text": "how can i move to toronto?",
+      "intent": "move",
+      "entities": []
+    },
+    {
+      "text": "how is the pollution in toronto?",
+      "intent": "pollution",
+      "entities": []
+    },
+    {
+      "text": "how is the level of pollution in toronto?",
+      "intent": "pollution",
+      "entities": []
+    },
+    {
+      "text": "does toronto have a lot of pollution?",
+      "intent": "pollution",
+      "entities": []
+    }
+  ]
+}
